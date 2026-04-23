@@ -78,4 +78,18 @@ dotnet run --project Ludo/Ludo/Ludo.csproj
 
 ## Current Status
 
-At the moment, this repository is prepared as the foundation for the `Ludo` project, and this `README` has been updated to reflect the intended direction of development. The next steps can include implementing the complete game loop, bot behavior, and network gameplay flow.
+The project now includes these working foundations:
+
+- playable `Single Player` mode with one local player and three bots
+- `Host Network Game` and `Join Network Game` flows over `TCP`
+- host-authoritative multiplayer logic, so the host controls turns, dice, captures, and win detection
+- automatic bot takeover if a remote player disconnects during the match
+- console board rendering that is shared between local and remote sessions
+
+To play over the network:
+
+1. Run the game on the host machine and choose `Host Network Game`.
+2. Enter the number of remote players and the listening `Port`.
+3. Run the game on the client machine(s) and choose `Join Network Game`.
+4. Enter the host `IP` and the same `Port`.
+5. Start playing once all remote players are connected.
